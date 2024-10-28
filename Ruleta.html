@@ -28,6 +28,14 @@
         let context = canvas.getContext("2d");
         let center = canvas.width / 2;
 
+        context.beginPath();
+            context.moveTo(center, center);
+            context.arc(center, center, center,0,2*Math.PI);
+            context.lineTo(center, center);
+            context.fillStyle = 'black';
+            context.fill();
+
+
         // Dibuja la ruleta
         for (let i = 0; i < array_concursantes.length; i++) {
             context.beginPath();
@@ -50,7 +58,7 @@
 
         let pos_ini = 0;
         let clic = 0;
-        let movement;
+        let movement; 
 
         function Sortear() {
             if (clic == 0) {
